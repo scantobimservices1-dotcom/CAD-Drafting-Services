@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Drafting Services | Tesla CAD Solutions Australia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // User specified palette
+                        brand: {
+                            aqua: '#5CD7DB',
+                            black: '#000000',
+                            white: '#ffffff',
+                            border: '#d9e3e6',
+                            gray: '#595959',
+                            dark: '#293333', // lighterblack
+                            offwhite: '#F7FCFC',
+                            lightgray: '#d2d2d2'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        header: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: #5CD7DB; /* brand-aqua */
+        }
+        .hero-overlay {
+            /* Updated to use brand-dark (#293333) with opacity */
+            background: linear-gradient(rgba(41, 51, 51, 0.85), rgba(41, 51, 51, 0.7));
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom underline animation for links */
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #5CD7DB;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-gray antialiased bg-brand-offwhite">
+
+    <!-- Navigation -->
+    <nav class="bg-brand-white border-b border-brand-border fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <!-- Logo Placeholder -->
+                    <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <div class="w-10 h-10 bg-brand-aqua text-brand-dark flex items-center justify-center rounded font-bold text-xl shadow-sm">T</div>
+                        <div class="flex flex-col">
+                            <span class="font-header font-bold text-brand-dark text-xl leading-none tracking-tight">TESLA</span>
+                            <span class="text-xs text-brand-gray font-medium tracking-widest">CAD SOLUTIONS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-brand-gray hover:text-brand-aqua font-medium transition hover-underline-animation">About Us</a>
+                    <a href="#services" class="text-brand-dark font-bold hover:text-brand-aqua transition">Services</a>
+                    <a href="#projects" class="text-brand-gray hover:text-brand-aqua font-medium transition hover-underline-animation">Portfolio</a>
+                    <a href="#contact" class="bg-brand-aqua text-brand-dark font-bold px-6 py-2 rounded shadow hover:bg-brand-dark hover:text-brand-aqua transition duration-300">Get a Quote</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-gray hover:text-brand-aqua focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-white border-t border-brand-border">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-brand-gray hover:bg-brand-offwhite rounded">About Us</a>
+                <a href="#services" class="block px-3 py-2 text-brand-aqua font-bold bg-brand-offwhite rounded">Services</a>
+                <a href="#projects" class="block px-3 py-2 text-brand-gray hover:bg-brand-offwhite rounded">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-center bg-brand-aqua text-brand-dark font-bold rounded mt-4">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[600px] flex items-center justify-center text-center text-white" id="home">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Architectural Drafting" class="w-full h-full object-cover grayscale-[30%]">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl px-4 mx-auto">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-header font-bold mb-6 leading-tight">
+                Precision CAD Drafting <br><span class="text-brand-aqua">Services in Australia</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+                We transform conceptual designs into detailed 2D & 3D digital drawings. Partner with Australia's leading CAD company for Architectural, Structural, and MEP solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#services" class="px-8 py-3 bg-brand-aqua text-brand-dark font-bold rounded shadow-lg hover:bg-brand-white transition duration-300">Explore Services</a>
+                <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-brand-white text-white font-bold rounded hover:bg-brand-white hover:text-brand-dark transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About / Intro Section -->
+    <section id="about" class="py-16 md:py-24 bg-brand-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-header font-bold text-brand-dark mb-4">Drafting Services in Melbourne & Across Australia</h2>
+                <div class="w-20 h-1 bg-brand-aqua mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-brand-gray leading-relaxed">
+                    <p class="text-lg">
+                        <strong class="text-brand-dark">Tesla CAD Solutions</strong> is a renowned drafting firm providing high-quality CAD services across all business verticals in Australia. Based in Melbourne, we assist clients in Perth, Sydney, Brisbane, and Adelaide with their CAD and Revit requirements.
+                    </p>
+                    <p>
+                        We strive to achieve the highest level of satisfaction for our clients by offering high-quality deliverables in a quick turnaround time. Our diverse expertise includes converting old paper drawings into precise digital formats, ensuring easy storage and fast retrieval for future construction processes.
+                    </p>
+                    <ul class="space-y-3 mt-4">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brand-aqua mr-3"></i> 15+ Years of Experience</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brand-aqua mr-3"></i> Skilled Team of Architects & Engineers</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brand-aqua mr-3"></i> Australian Standards Compliant</li>
+                    </ul>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-2 bg-brand-aqua rounded-lg opacity-20 group-hover:opacity-40 transition duration-500 transform rotate-2"></div>
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Engineers working on CAD" class="relative rounded-lg shadow-xl w-full object-cover h-80 filter contrast-125">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-brand-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-aqua font-bold tracking-wider uppercase text-sm">What We Do</span>
+                <h2 class="text-3xl md:text-4xl font-header font-bold text-brand-dark mt-2">Comprehensive CAD Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Architectural Drafting -->
+                <div class="service-card bg-brand-white rounded-xl shadow-sm p-8 transition duration-300 hover:shadow-xl border border-brand-border hover:border-brand-aqua group">
+                    <div class="service-icon text-4xl text-brand-lightgray mb-6 transition duration-300 group-hover:text-brand-aqua">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Architectural Drafting</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed mb-4">
+                        Right from conception to realization, we offer end-to-end Architectural CAD Drawing Services. We provide architectural construction drawings, 2D floor plans, sections, elevation drawings, and as-built drawings.
+                    </p>
+                    <a href="#" class="text-brand-aqua font-bold text-sm hover:text-brand-dark transition">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Structural Drafting -->
+                <div class="service-card bg-brand-white rounded-xl shadow-sm p-8 transition duration-300 hover:shadow-xl border border-brand-border hover:border-brand-aqua group">
+                    <div class="service-icon text-4xl text-brand-lightgray mb-6 transition duration-300 group-hover:text-brand-aqua">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Structural Drafting</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed mb-4">
+                        We offer comprehensive Structural CAD Drafting Services for AEC firms. Our experts create precise Foundation Layouts, Structural Part Drawings, Erection Layouts, and Steel Plate Fabrication Drawings.
+                    </p>
+                    <a href="#" class="text-brand-aqua font-bold text-sm hover:text-brand-dark transition">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- MEP Drafting -->
+                <div class="service-card bg-brand-white rounded-xl shadow-sm p-8 transition duration-300 hover:shadow-xl border border-brand-border hover:border-brand-aqua group">
+                    <div class="service-icon text-4xl text-brand-lightgray mb-6 transition duration-300 group-hover:text-brand-aqua">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">MEP CAD Drafting</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed mb-4">
+                        Specialized MEP drafting team providing quality HVAC, Electrical, and Plumbing solutions. We create MEP shop drawings, electrical plan layouts, and fire protection drawings that follow dimensional standards.
+                    </p>
+                    <a href="#" class="text-brand-aqua font-bold text-sm hover:text-brand-dark transition">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Mechanical Drafting -->
+                <div class="service-card bg-brand-white rounded-xl shadow-sm p-8 transition duration-300 hover:shadow-xl border border-brand-border hover:border-brand-aqua group">
+                    <div class="service-icon text-4xl text-brand-lightgray mb-6 transition duration-300 group-hover:text-brand-aqua">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Mechanical Drafting</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed mb-4">
+                        Comprehensive Mechanical Drafting services ranging from simple design to complex Mechanical Part Drawings and Assembly drawings. We ensure reduced costs with high-quality results.
+                    </p>
+                    <a href="#" class="text-brand-aqua font-bold text-sm hover:text-brand-dark transition">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Benefits -->
+    <section class="py-16 bg-brand-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-brand-offwhite rounded-full opacity-70"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-offwhite rounded-full opacity-70"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl font-header font-bold text-brand-dark mb-6">Drafting Advantages</h2>
+                    <p class="text-brand-gray mb-8">
+                        Our diverse expertise and impeccable understanding of Australian construction requirements has enabled us to successfully carve a niche for ourselves.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-aqua text-brand-dark shadow-sm">
+                                    <i class="fas fa-save"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-brand-dark">Cost & Time Efficiency</h4>
+                                <p class="mt-2 text-brand-gray text-sm">CAD Drawings increase productivity and facilitate cost control in turnaround delivery time, reducing rework chances.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-aqua text-brand-dark shadow-sm">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-brand-dark">Digital Storage & Retrieval</h4>
+                                <p class="mt-2 text-brand-gray text-sm">Reproduction of superior quality drawings from original paper drawings leads to better visualization, faster sharing, and easier storage.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-aqua text-brand-dark shadow-sm">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-brand-dark">Standardization</h4>
+                                <p class="mt-2 text-brand-gray text-sm">Our drawings are standardized, organized, and detailed using appropriate layer standards, making them readable to all stakeholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-offwhite rounded-2xl p-8 border border-brand-border shadow-sm">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Client Testimonial</h3>
+                    <div class="relative">
+                        <i class="fas fa-quote-left text-4xl text-brand-lightgray absolute -top-4 -left-4 opacity-50"></i>
+                        <p class="text-brand-gray italic text-lg relative z-10 mb-6">
+                            "I've worked with Tesla CAD Solutions on several projects, and I'm impressed by their attention to detail and dedication to getting it right. Their CAD drafting expertise has saved us countless drafting hours, and I couldn't recommend them more!"
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-bold">H</div>
+                            <div class="ml-4">
+                                <p class="text-brand-dark font-bold">Henry</p>
+                                <p class="text-brand-gray text-sm">Project Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 p-6 bg-white rounded-xl border border-brand-border">
+                        <h4 class="font-bold text-brand-dark mb-2">Ready to start?</h4>
+                        <p class="text-sm text-brand-gray mb-4">Send us your sketches or requirements for a quick quote.</p>
+                        <a href="#contact" class="inline-block w-full text-center bg-brand-aqua text-brand-dark font-bold py-3 rounded hover:bg-brand-dark hover:text-brand-aqua transition duration-300">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Projects Preview -->
+    <section id="projects" class="py-16 bg-brand-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-header font-bold text-brand-dark">Featured Projects</h2>
+                <p class="text-brand-gray mt-4 max-w-2xl mx-auto">A glimpse into our diverse portfolio of residential, commercial, and industrial projects.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Construction Site" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-brand-dark bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg border-b-2 border-brand-aqua pb-1">Residential Drafting</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mechanical Gears" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-brand-dark bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg border-b-2 border-brand-aqua pb-1">Mechanical Shop Drawings</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skyscraper" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-brand-dark bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg border-b-2 border-brand-aqua pb-1">High-Rise MEP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="text-brand-dark font-bold hover:text-brand-aqua transition">View Full Portfolio <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                         <div class="w-8 h-8 bg-brand-aqua text-brand-dark flex items-center justify-center rounded font-bold text-lg">T</div>
+                         <span class="font-bold text-xl">TESLA CAD</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Leading provider of CAD Design and Drafting Services in Australia. We assist clients in Perth, Sydney, Brisbane, Adelaide, and Melbourne.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-brand-aqua">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-brand-aqua transition">Architectural Drafting</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">Structural Drafting</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">MEP Shop Drawings</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">Mechanical Design</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-brand-aqua">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-brand-aqua transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-brand-aqua transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-brand-aqua">Contact Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-brand-aqua"></i>
+                            <span>17 Tinks Road, Narre Warren<br>3805 Victoria, Australia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-brand-aqua"></i>
+                            <span>+61 48 999 7117</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-brand-aqua"></i>
+                            <span>projects@teslacad.com.au</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400 text-center md:text-left">
+                    Copyright © 2026 Tesla CAD Solutions. All Rights Reserved.
+                </p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-brand-aqua transition"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-aqua transition"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-aqua transition"><i class="fab fa-twitter text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
