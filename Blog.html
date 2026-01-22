@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | Tesla CAD Solutions Australia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            aqua: '#5CD7DB',
+                            black: '#000000',
+                            white: '#ffffff',
+                            border: '#d9e3e6',
+                            gray: '#595959',
+                            dark: '#293333', 
+                            offwhite: '#F7FCFC',
+                            lightgray: '#d2d2d2'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        header: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(rgba(41, 51, 51, 0.9), rgba(41, 51, 51, 0.8));
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-gray antialiased bg-brand-offwhite">
+
+    <!-- Navigation -->
+    <nav class="bg-brand-white border-b border-brand-border fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <!-- Logo linking back to Home -->
+                    <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                        <div class="w-10 h-10 bg-brand-aqua text-brand-dark flex items-center justify-center rounded font-bold text-xl shadow-sm">T</div>
+                        <div class="flex flex-col">
+                            <span class="font-header font-bold text-brand-dark text-xl leading-none tracking-tight">TESLA</span>
+                            <span class="text-xs text-brand-gray font-medium tracking-widest">CAD SOLUTIONS</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#services" class="text-brand-dark font-bold hover:text-brand-aqua transition">Services</a>
+                    <a href="#" class="text-brand-aqua font-bold transition">Blog</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-gray hover:text-brand-aqua focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-white border-t border-brand-border">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#services" class="block px-3 py-2 text-brand-dark font-bold hover:bg-brand-offwhite rounded">Services</a>
+                <a href="#" class="block px-3 py-2 text-brand-aqua font-bold bg-brand-offwhite rounded">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="relative h-[400px] flex items-center justify-center text-center text-white pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Office Background" class="w-full h-full object-cover grayscale-[50%]">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl px-4 mx-auto">
+            <h1 class="text-4xl md:text-5xl font-header font-bold mb-4">
+                Industry <span class="text-brand-aqua">Insights</span>
+            </h1>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto font-light">
+                Latest news, trends, and expert opinions on CAD drafting, BIM technology, and Australian construction standards.
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <section class="py-16 bg-brand-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Post 1 (Existing) -->
+                <article class="bg-brand-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition duration-300 border border-brand-border flex flex-col h-full">
+                    <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Construction Plans" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-brand-aqua uppercase">Construction</span>
+                            <span class="text-xs text-brand-lightgray">Jan 20, 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-2 hover:text-brand-aqua transition cursor-pointer">Benefits of Outsourcing CAD Services</h3>
+                        <p class="text-brand-gray text-sm mb-4 line-clamp-3 flex-grow">
+                            Discover how Australian firms are reducing overhead costs and improving project turnaround times by partnering with specialized CAD drafting services.
+                        </p>
+                        <a href="#" class="text-sm font-bold text-brand-dark hover:text-brand-aqua inline-flex items-center mt-auto">Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center mt-16 space-x-2">
+                <button class="px-4 py-2 border border-brand-border rounded text-brand-gray hover:border-brand-aqua hover:text-brand-aqua transition disabled:opacity-50" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="px-4 py-2 bg-brand-aqua text-brand-dark font-bold rounded">1</button>
+                <button class="px-4 py-2 border border-brand-border rounded text-brand-gray hover:bg-brand-white hover:border-brand-aqua hover:text-brand-aqua transition">2</button>
+                <button class="px-4 py-2 border border-brand-border rounded text-brand-gray hover:bg-brand-white hover:border-brand-aqua hover:text-brand-aqua transition">3</button>
+                <span class="text-brand-gray px-2">...</span>
+                <button class="px-4 py-2 border border-brand-border rounded text-brand-gray hover:bg-brand-white hover:border-brand-aqua hover:text-brand-aqua transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
